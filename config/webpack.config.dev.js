@@ -74,9 +74,7 @@ module.exports = {
         use: [
           {
             options: {
-              formatter: eslintFormatter,
-              eslintPath: require.resolve('eslint'),
-
+              configFile: require.resolve('../.eslintrc.dev.json'),
             },
             loader: require.resolve('eslint-loader'),
           },

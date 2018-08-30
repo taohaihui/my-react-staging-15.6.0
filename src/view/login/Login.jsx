@@ -1,11 +1,11 @@
 /**
  * Created by thh on 2018/6/21.
  */
-import React, {PureComponent} from 'react';
-import {hashHistory} from 'react-router';
+import React, { PureComponent } from 'react';
+import { hashHistory } from 'react-router';
 
-import {Button} from 'antd';
-import {login} from '../../service/login';
+import { Button } from 'antd';
+import { login } from '../../service/login';
 
 export default class Login extends PureComponent {
   constructor(props) {
@@ -31,7 +31,7 @@ export default class Login extends PureComponent {
       pwd: 123
     }).then(res => {
       console.log(res);
-    })
+    });
   }
 
   handleClick() {

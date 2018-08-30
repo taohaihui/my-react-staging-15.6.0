@@ -1,11 +1,11 @@
 /*
  * @Author: thh 
  * @Date: 2018-08-30 15:07:00 
- * @Last Modified by:   thh 
- * @Last Modified time: 2018-08-30 15:07:00 
+ * @Last Modified by: thh
+ * @Last Modified time: 2018-08-30 15:37:31
  */
-import {hashHistory} from 'react-router';
-import {message} from 'antd';
+import { hashHistory } from 'react-router';
+import { message } from 'antd';
 import NProgress from 'nprogress';
 import { isEmpty, isString, isObject } from '../utils/util.js';
 import $ from 'jquery';
@@ -20,7 +20,7 @@ export default function reqPromise({
   headers = {},
   timeout = 20000,
   isSingle = false  //同一时间只能请求一次
-  }) {
+}) {
   if (isEmpty(url)) {
     message.error('请求路径不能为空');
     return;
@@ -32,7 +32,7 @@ export default function reqPromise({
 
   let key = '';
   if (isSingle) {
-    if(window.ajaxList[url]) {
+    if (window.ajaxList[url]) {
       return;
     }
     key = url; //请求列表的键名
@@ -53,13 +53,14 @@ export default function reqPromise({
       headers: headers,
       timeout: timeout,
       beforeSend: function (XMLHttpRequest) {
+        // 
       },
       success: function (res, textStatus) {
         /*未登录*/
-        if(res.success) {
+        if (res.success) {
           resolve(res);
-        }else {
-          if(res.msg === '用户名和密码不匹配！') {
+        } else {
+          if (res.msg === '用户名和密码不匹配！') {
             resolve(res);
           }
 
